@@ -27,7 +27,14 @@ Apply post-hoc anomaly scoring methods on top of a pretrained ERFNet model:
 Evaluate the EoMT model on the same benchmarks. Since EoMT is a mask architecture, its output differs from pixel-based models, enabling an additional method:
 - **MSP**, **Max Logit**, **Max Entropy**
 - **RbA** — Rejected by All (mask-architecture specific)
-- **Temperature Scaling** — confidence calibration to improve anomaly detection
+The table should look like this:
+<img width="687" height="380" alt="image" src="https://github.com/user-attachments/assets/7be03602-ec94-4577-8047-77f5133e42de" />
+
+- **Temperature Scaling** — confidence calibration to improve anomaly detection:
+<img width="642" height="242" alt="image" src="https://github.com/user-attachments/assets/239b1561-d91d-4e18-98bb-0bc9ff272b44" />
+
+
+
 
 ### 6. Extensions
 Propose and implement additional analyses or improvements, such as:
