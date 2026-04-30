@@ -88,9 +88,13 @@ def build_coco_to_cs_lut(num_coco_classes, device):
     return lut
 
 
-def build_model_and_data(config_path, ckpt_path, data_path, device):
+def build_model_and_data(config_path, ckpt_path, data_path, device, setup_data=True):
     """Mirror eomt/inference.ipynb: build encoder, network, lit module from YAML config,
-    then load the .bin checkpoint into the lit module."""
+    then load the .bin checkpoint into the lit module.
+
+    If setup_data is False, the data module is returned without .setup() — useful when
+    only metadata (num_classes, img_size, stuff_classes) is needed and the underlying
+    zips are not available (e.g. building the COCO model on a Cityscapes-only path)."""
     with open(config_path) as f:
         config = yaml.safe_load(f)
 
@@ -104,7 +108,9 @@ def build_model_and_data(config_path, ckpt_path, data_path, device):
         num_workers=0,
         check_empty_targets=False,
         **config["data"].get("init_args", {}),
-    ).setup()
+    )
+    if setup_data:
+        data = data.setup()
 
     # encoder
     enc_cfg = config["model"]["init_args"]["network"]["init_args"]["encoder"]
@@ -240,11 +246,12 @@ def save_semantic_vis(img, pred, target, path):
     plt.close(fig)
 
 
-def save_panoptic_vis(img, sem_pred, inst_pred, num_classes, path):
-    """Random hue per semantic class + black borders between segments (mirrors inference.ipynb)."""
+def panoptic_to_rgb(sem_pred, inst_pred, num_classes, seed=0):
+    """Render a panoptic prediction as an RGB image: a random hue per semantic class,
+    with black borders between adjacent segments. Mirrors eomt/inference.ipynb."""
     h, w = sem_pred.shape
     sem_ids = np.unique(sem_pred)
-    rng = np.random.default_rng(0)
+    rng = np.random.default_rng(seed)
     color_for = {
         int(s): np.array([0, 0, 0], dtype=np.uint8) if s == -1 or s == num_classes
         else (np.array(plt.cm.hsv(rng.random())[:3]) * 255).astype(np.uint8)
@@ -261,7 +268,12 @@ def save_panoptic_vis(img, sem_pred, inst_pred, num_classes, path):
     border[:, 1:] |= combined[:, 1:] != combined[:, :-1]
     border[:, :-1] |= combined[:, 1:] != combined[:, :-1]
     out[border] = 0
+    return out
 
+
+def save_panoptic_vis(img, sem_pred, inst_pred, num_classes, path):
+    """Save side-by-side image + panoptic visualization to disk."""
+    out = panoptic_to_rgb(sem_pred, inst_pred, num_classes)
     fig, axes = plt.subplots(1, 2, figsize=(12, 5))
     axes[0].imshow(img.permute(1, 2, 0).cpu().numpy())
     axes[0].set_title("Image")
@@ -284,17 +296,24 @@ def per_pixel_target(target_dict, ignore_idx=IGNORE_INDEX):
     return out
 
 
-def evaluate_cs_model(args, device, vis_dir):
-    print(f"[cs] loading {args.cs_config}")
-    model, data = build_model_and_data(
-        Path(args.cs_config), Path(args.cs_ckpt), Path(args.data_path), device
-    )
+def evaluate_semantic(
+    model, dataset, device, lut=None, max_images=-1,
+    num_vis=0, vis_dir=None, vis_prefix="vis", log_every=50,
+):
+    """Compute per-class IoU on `dataset` using `model`.
+
+    If `lut` is provided, raw model predictions are remapped through it
+    (COCO continuous id -> Cityscapes train_id). Pixels whose prediction is
+    unmappable (lut value == IGNORE_INDEX) are excluded from the metric by
+    masking the target to ignore. Returns a [NUM_CS_CLASSES] IoU tensor on CPU.
+
+    If `num_vis > 0` and `vis_dir` is given, saves up to `num_vis` semantic
+    visualizations as `{vis_prefix}_{idx:04d}.png` (uses the remapped pred when
+    a lut is given, so the saved image is in CS color space)."""
     metric = MulticlassJaccardIndex(
         num_classes=NUM_CS_CLASSES, ignore_index=IGNORE_INDEX, average=None
     ).to(device)
-
-    dataset = data.val_dataloader().dataset
-    n = len(dataset) if args.max_images <= 0 else min(args.max_images, len(dataset))
+    n = len(dataset) if max_images <= 0 else min(max_images, len(dataset))
     saved = 0
     for i in range(n):
         img, tgt = dataset[i]
@@ -302,27 +321,50 @@ def evaluate_cs_model(args, device, vis_dir):
         logits = infer_semantic_logits(model, img, device)
         pred = logits.argmax(0)
 
-        metric.update(pred[None], target[None])
+        if lut is not None:
+            pred_cs = lut[pred]
+            unmapped = pred_cs.eq(IGNORE_INDEX)
+            target_for_metric = torch.where(unmapped, torch.full_like(target, IGNORE_INDEX), target)
+            pred_for_metric = torch.where(unmapped, torch.zeros_like(pred_cs), pred_cs)
+        else:
+            target_for_metric = target
+            pred_for_metric = pred
 
-        if saved < args.num_vis:
+        metric.update(pred_for_metric[None], target_for_metric[None])
+
+        if saved < num_vis and vis_dir is not None:
             save_semantic_vis(
-                img, pred.cpu().numpy(), target.cpu().numpy(),
-                vis_dir / f"cs_{i:04d}.png",
+                img, pred_for_metric.cpu().numpy(), target.cpu().numpy(),
+                vis_dir / f"{vis_prefix}_{i:04d}.png",
             )
             saved += 1
 
-        if (i + 1) % 50 == 0:
-            print(f"  [cs] {i+1}/{n}")
+        if log_every and (i + 1) % log_every == 0:
+            print(f"  {vis_prefix} {i+1}/{n}")
 
     return metric.compute().cpu()
+
+
+def evaluate_cs_model(args, device, vis_dir):
+    print(f"[cs] loading {args.cs_config}")
+    model, data = build_model_and_data(
+        Path(args.cs_config), Path(args.cs_ckpt), Path(args.data_path), device
+    )
+    dataset = data.val_dataloader().dataset
+    return evaluate_semantic(
+        model, dataset, device,
+        max_images=args.max_images,
+        num_vis=args.num_vis, vis_dir=vis_dir, vis_prefix="cs",
+    )
 
 
 def evaluate_coco_model(args, device, vis_dir):
     print(f"[coco] loading {args.coco_config}")
     model, data = build_model_and_data(
-        Path(args.coco_config), Path(args.coco_ckpt), Path(args.data_path), device
+        Path(args.coco_config), Path(args.coco_ckpt), Path(args.data_path), device,
+        setup_data=False,
     )
-    print(f"[coco] loading Cityscapes val for evaluation")
+    print("[coco] loading Cityscapes val for evaluation")
     CityscapesSemantic = getattr(
         importlib.import_module("datasets.cityscapes_semantic"), "CityscapesSemantic"
     )
@@ -332,38 +374,18 @@ def evaluate_coco_model(args, device, vis_dir):
     ).setup()
     cs_dataset = cs_data.val_dataloader().dataset
 
+    # Panoptic qualitative samples (separate from the semantic mIoU loop).
+    for i in range(min(args.num_vis, len(cs_dataset))):
+        img, _ = cs_dataset[i]
+        sem, inst = infer_panoptic(model, img, device)
+        save_panoptic_vis(img, sem, inst, data.num_classes, vis_dir / f"coco_panoptic_{i:04d}.png")
+
     lut = build_coco_to_cs_lut(data.num_classes, device)
-    metric = MulticlassJaccardIndex(
-        num_classes=NUM_CS_CLASSES, ignore_index=IGNORE_INDEX, average=None
-    ).to(device)
-
-    n = len(cs_dataset) if args.max_images <= 0 else min(args.max_images, len(cs_dataset))
-    saved = 0
-    for i in range(n):
-        img, tgt = cs_dataset[i]
-        target = per_pixel_target(tgt).to(device)
-
-        logits = infer_semantic_logits(model, img, device)  # [133, H, W]
-        coco_pred = logits.argmax(0)
-        cs_pred = lut[coco_pred]                            # {0..18, 255}
-
-        # Drop pixels whose prediction is unmappable: set their target to ignore so the
-        # metric skips them. Predictions are clamped to a valid index just to satisfy
-        # the metric API; those pixels are guaranteed ignored via the masked target.
-        unmapped = cs_pred.eq(IGNORE_INDEX)
-        target_masked = torch.where(unmapped, torch.full_like(target, IGNORE_INDEX), target)
-        cs_pred_safe = torch.where(unmapped, torch.zeros_like(cs_pred), cs_pred)
-        metric.update(cs_pred_safe[None], target_masked[None])
-
-        if saved < args.num_vis:
-            sem, inst = infer_panoptic(model, img, device)
-            save_panoptic_vis(img, sem, inst, data.num_classes, vis_dir / f"coco_{i:04d}.png")
-            saved += 1
-
-        if (i + 1) % 50 == 0:
-            print(f"  [coco] {i+1}/{n}")
-
-    return metric.compute().cpu()
+    return evaluate_semantic(
+        model, cs_dataset, device, lut=lut,
+        max_images=args.max_images,
+        num_vis=args.num_vis, vis_dir=vis_dir, vis_prefix="coco_remap",
+    )
 
 
 def print_iou_table(name, iou_per_class):
