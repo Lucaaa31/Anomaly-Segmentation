@@ -23,7 +23,7 @@ cross-dataset comparison reported on a reduced class set.
 
 import torch
 
-from utils.constants import IGNORE_INDEX
+from utils.constants import IGNORE_INDEX, NUM_CS_CLASSES
 
 
 COCO_TO_CS = {
@@ -85,6 +85,38 @@ def common_target_remap(target, ignore_idx=IGNORE_INDEX):
         out[target == c] = ignore_idx
     for src, dst in CS_MERGE_IN_COMMON.items():
         out[target == src] = dst
+    return out
+
+
+def cs_active_classes(label_space):
+    """CS train_ids that should contribute to the mIoU under the given label space.
+
+    Under 'common', the dropped classes (pole, traffic sign) and the merged
+    source class (rider, folded into person) are NOT active: their IoU is
+    meaningless / not what the model is being asked to predict, and including
+    them in the per-class table or the mean drags the result down spuriously.
+    """
+    if label_space == "strict":
+        return list(range(NUM_CS_CLASSES))
+    if label_space == "common":
+        inactive = set(CS_DROP_IN_COMMON) | set(CS_MERGE_IN_COMMON.keys())
+        return [c for c in range(NUM_CS_CLASSES) if c not in inactive]
+    raise ValueError(f"unknown label_space: {label_space}")
+
+
+def mask_inactive_to_nan(iou_per_class, label_space):
+    """Set the IoU of inactive classes (under `label_space`) to NaN.
+
+    torchmetrics `MulticlassJaccardIndex` returns 0.0 (not NaN) for classes
+    with no support, which silently inflates the mean when classes are dropped.
+    This helper makes the dropped/merged classes show up as NaN so they can
+    be skipped from the table and the mean cleanly.
+    """
+    active = set(cs_active_classes(label_space))
+    out = iou_per_class.clone()
+    for c in range(out.numel()):
+        if c not in active:
+            out[c] = float("nan")
     return out
 
 

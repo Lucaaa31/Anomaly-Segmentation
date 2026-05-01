@@ -44,6 +44,7 @@ from utils.class_remap import (  # noqa: E402
     build_coco_to_cs_lut,
     common_pred_remap,
     common_target_remap,
+    mask_inactive_to_nan,
 )
 from utils.constants import IGNORE_INDEX, NUM_CS_CLASSES  # noqa: E402
 from utils.inference import infer_panoptic, infer_semantic_logits  # noqa: E402
@@ -150,9 +151,10 @@ def evaluate_semantic(
         if log_every and (i + 1) % log_every == 0:
             print(f"  {vis_prefix} {i+1}/{n}")
 
+    results = {s: mask_inactive_to_nan(metrics[s].compute().cpu(), s) for s in spaces}
     if multi:
-        return {s: metrics[s].compute().cpu() for s in spaces}
-    return metrics[spaces[0]].compute().cpu()
+        return results
+    return results[spaces[0]]
 
 
 def print_iou_table(name, iou_per_class):
