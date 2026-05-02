@@ -33,10 +33,15 @@ def build_model_and_data(
     underlying zips are not available (e.g. building the COCO model on a Cityscapes-only
     path).
 
-    If `skip_class_head` is True, keys containing 'class_head' or 'class_predictor'
-    are filtered from the checkpoint before loading. Use this when loading weights
-    from a checkpoint with a different number of classes (e.g. COCO -> Cityscapes
-    fine-tuning).
+    If `skip_class_head` is True, the checkpoint is filtered to drop tensors
+    that cannot be transferred across class / query spaces:
+    - keys containing 'class_head' or 'class_predictor' (different num_classes)
+    - any other key whose tensor shape disagrees with the target model
+      (e.g. `network.q.weight` when num_queries differs, `criterion.empty_weight`
+      whose length depends on num_classes).
+    Use this when loading weights from a checkpoint with a different number of
+    classes / queries (e.g. COCO panoptic 200q/133cls -> Cityscapes semantic
+    100q/19cls fine-tuning).
 
     `data_overrides` lets callers tweak the data-module init args coming from the YAML
     (e.g. {"img_size": (640, 640), "batch_size": 2, "num_workers": 2}).
@@ -95,10 +100,23 @@ def build_model_and_data(
         state_dict = state_dict["state_dict"]
     state_dict = {k.replace("._orig_mod", ""): v for k, v in state_dict.items()}
     if skip_class_head:
-        state_dict = {
-            k: v for k, v in state_dict.items()
-            if "class_head" not in k and "class_predictor" not in k
-        }
+        model_sd = model.state_dict()
+        filtered, dropped_class_head, dropped_shape = {}, [], []
+        for k, v in state_dict.items():
+            if "class_head" in k or "class_predictor" in k:
+                dropped_class_head.append(k)
+                continue
+            if k in model_sd and model_sd[k].shape != v.shape:
+                dropped_shape.append((k, tuple(v.shape), tuple(model_sd[k].shape)))
+                continue
+            filtered[k] = v
+        state_dict = filtered
+        if dropped_class_head:
+            print(f"  [info] skip_class_head: dropped {len(dropped_class_head)} class-head key(s)")
+        if dropped_shape:
+            print(f"  [info] skip_class_head: dropped {len(dropped_shape)} shape-mismatched key(s):")
+            for k, ck_shape, mdl_shape in dropped_shape:
+                print(f"    {k}: ckpt {ck_shape} vs model {mdl_shape}")
     incompatible = model.load_state_dict(state_dict, strict=False)
     if incompatible.missing_keys:
         print(f"  [warn] missing keys: {len(incompatible.missing_keys)}")
