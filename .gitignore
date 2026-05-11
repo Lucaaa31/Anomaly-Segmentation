@@ -178,3 +178,11 @@ CLAUDE.md
 Project 1 - Anomaly_Segmentation.pdf
 *.bin
 .claude
+
+
+# Datasets of the images
+dataset/FS_LostFound_full/*.png
+dataset/fs_static/*.jpg
+dataset/RoadAnomaly/*.jpg
+dataset/RoadAnomaly21/*.png
+dataset/RoadObstacle21/*.webp
