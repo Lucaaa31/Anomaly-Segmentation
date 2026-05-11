@@ -1,1 +1,10 @@
-
+wget
+ood_metrics
+lightning
+timm
+transformers
+pyyaml
+torchmetrics
+fvcore
+scipy
+pycocotools
