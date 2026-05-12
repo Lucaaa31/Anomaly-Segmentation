@@ -8,3 +8,4 @@ torchmetrics
 fvcore
 scipy
 pycocotools
+wandb

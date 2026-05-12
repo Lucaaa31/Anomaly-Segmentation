@@ -17,7 +17,7 @@ import yaml
 
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
-EOMT_DIR = REPO_ROOT / "eomt"
+EOMT_DIR = REPO_ROOT / "models" / "eomt"
 if str(EOMT_DIR) not in sys.path:
     sys.path.insert(0, str(EOMT_DIR))
 
