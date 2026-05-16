@@ -45,3 +45,50 @@ final_bin:   /content/drive/MyDrive/Colab_Projects/Anomaly-Segmentation/models/c
     train            44.75
     motorcycle       61.16
     bicycle          77.64
+
+=== STRATEGY: phased  (2026-05-14 09:43:42) ===
+global_step: 20000/20000
+best_ckpt:   /content/drive/MyDrive/Colab_Projects/Anomaly-Segmentation/checkpoints/phased/ckpt_best.pt
+final_bin:   /content/drive/MyDrive/Colab_Projects/Anomaly-Segmentation/models/coco_finetune/phased/eomt_finetuned_phased.bin
+
+  [strict]  mIoU = 77.91  (19 cls)
+    road             98.10
+    sidewalk         85.30
+    building         93.03
+    wall             63.83
+    fence            63.71
+    pole             62.83
+    traffic light    69.06
+    traffic sign     77.01
+    vegetation       92.34
+    terrain          67.98
+    sky              94.92
+    person           82.47
+    rider            63.78
+    car              94.58
+    truck            77.87
+    bus              84.54
+    train            70.48
+    motorcycle       61.29
+    bicycle          77.13
+
+  [common]  mIoU = 80.65  (16 cls)
+    road             98.13
+    sidewalk         85.64
+    building         93.90
+    wall             64.36
+    fence            65.85
+    pole             -
+    traffic light    73.03
+    traffic sign     -
+    vegetation       92.88
+    terrain          68.39
+    sky              95.13
+    person           83.94
+    rider            -
+    car              94.75
+    truck            78.21
+    bus              84.82
+    train            71.06
+    motorcycle       62.21
+    bicycle          78.18
