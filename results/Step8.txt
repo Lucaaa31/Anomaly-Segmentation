@@ -1,15 +1,15 @@
-Method: max_entropy | Dataset: RoadAnomaly21 | Model: cityscapes
-AUPRC: 62.36507% | FPR@TPR95: 49.18521%
-==================================================
-
-Method: max_logit | Dataset: RoadAnomaly21 | Model: cityscapes
-AUPRC: 67.69106% | FPR@TPR95: 40.00773%
-==================================================
-
 Method: MSP | Dataset: RoadAnomaly21 | Model: cityscapes
 AUPRC: 56.55133% | FPR@TPR95: 49.64886%
 ==================================================
 
+Method: max_logit | Dataset: RoadAnomaly21 | Model: cityscapes
+AUPRC: 79.37386% | FPR@TPR95: 5.56483%
+==================================================
+
+Method: max_entropy | Dataset: RoadAnomaly21 | Model: cityscapes
+AUPRC: 62.36507% | FPR@TPR95: 49.18521%
+==================================================
+
 Method: RbA | Dataset: RoadAnomaly21 | Model: cityscapes
-AUPRC: 52.72349% | FPR@TPR95: 59.58560%
-====================================================================================================
+AUPRC: 8.69691% | FPR@TPR95: 99.78949%
+==================================================
