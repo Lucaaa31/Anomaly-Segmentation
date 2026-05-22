@@ -92,3 +92,144 @@ final_bin:   /content/drive/MyDrive/Colab_Projects/Anomaly-Segmentation/models/c
     train            71.06
     motorcycle       62.21
     bicycle          78.18
+
+=== STRATEGY: full  (2026-05-16 22:21:25) ===
+global_step: 20000/20000
+best_ckpt:   /content/drive/MyDrive/Colab_Projects/Anomaly-Segmentation/checkpoints/full/ckpt_best.pt
+final_bin:   /content/drive/MyDrive/Colab_Projects/Anomaly-Segmentation/models/coco_finetune/full/eomt_finetuned_full.bin
+
+  [strict]  mIoU = 76.52  (19 cls)
+    road             97.99
+    sidewalk         84.69
+    building         92.83
+    wall             62.99
+    fence            59.26
+    pole             62.07
+    traffic light    68.06
+    traffic sign     75.65
+    vegetation       92.15
+    terrain          67.20
+    sky              94.70
+    person           80.55
+    rider            60.06
+    car              94.37
+    truck            78.67
+    bus              84.11
+    train            65.94
+    motorcycle       57.35
+    bicycle          75.31
+
+  [common]  mIoU = 79.48  (16 cls)
+    road             98.00
+    sidewalk         85.01
+    building         93.69
+    wall             64.28
+    fence            61.47
+    pole             -
+    traffic light    71.95
+    traffic sign     -
+    vegetation       92.74
+    terrain          67.64
+    sky              94.92
+    person           83.08
+    rider            -
+    car              94.56
+    truck            78.95
+    bus              84.41
+    train            66.37
+    motorcycle       58.20
+    bicycle          76.34
+
+=== STRATEGY: head_only_lora  (2026-05-18 23:31:40) ===
+global_step: 12000/12000
+best_ckpt:   /content/drive/MyDrive/Colab_Projects/Anomaly-Segmentation/checkpoints/head_only_lora/ckpt_best.pt
+final_bin:   /content/drive/MyDrive/Colab_Projects/Anomaly-Segmentation/models/coco_finetune/head_only_lora/eomt_finetuned_head_only_lora.bin
+
+  [strict]  mIoU = 75.69  (19 cls)
+    road             98.12
+    sidewalk         85.30
+    building         92.77
+    wall             59.00
+    fence            58.48
+    pole             61.22
+    traffic light    66.00
+    traffic sign     75.31
+    vegetation       92.04
+    terrain          65.61
+    sky              94.61
+    person           80.75
+    rider            59.59
+    car              94.17
+    truck            74.03
+    bus              83.57
+    train            67.80
+    motorcycle       54.24
+    bicycle          75.58
+
+  [common]  mIoU = 78.76  (16 cls)
+    road             98.13
+    sidewalk         85.71
+    building         93.61
+    wall             60.18
+    fence            61.15
+    pole             -
+    traffic light    70.92
+    traffic sign     -
+    vegetation       92.61
+    terrain          66.16
+    sky              94.87
+    person           83.13
+    rider            -
+    car              94.38
+    truck            74.52
+    bus              83.96
+    train            68.38
+    motorcycle       55.69
+    bicycle          76.76
+
+=== STRATEGY: full  (2026-05-22 06:01:37) ===
+global_step: 20000/20000
+best_ckpt:   /content/drive/MyDrive/Colab_Projects/Anomaly-Segmentation/checkpoints/full/ckpt_best.pt
+final_bin:   /content/drive/MyDrive/Colab_Projects/Anomaly-Segmentation/models/coco_finetune/full/eomt_finetuned_full.bin
+
+  [strict]  mIoU = 76.85  (19 cls)
+    road             98.18
+    sidewalk         85.70
+    building         92.85
+    wall             60.09
+    fence            63.90
+    pole             64.06
+    traffic light    68.96
+    traffic sign     76.44
+    vegetation       92.36
+    terrain          67.40
+    sky              94.98
+    person           81.64
+    rider            63.65
+    car              94.12
+    truck            67.07
+    bus              84.39
+    train            66.90
+    motorcycle       60.66
+    bicycle          76.81
+
+  [common]  mIoU = 79.37  (16 cls)
+    road             98.20
+    sidewalk         86.01
+    building         93.64
+    wall             60.88
+    fence            65.80
+    pole             -
+    traffic light    72.70
+    traffic sign     -
+    vegetation       92.90
+    terrain          67.89
+    sky              95.16
+    person           83.40
+    rider            -
+    car              94.30
+    truck            67.42
+    bus              84.66
+    train            67.39
+    motorcycle       61.65
+    bicycle          77.85
