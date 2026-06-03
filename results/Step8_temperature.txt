@@ -1,0 +1,16 @@
+
+Model: coco | Dataset: fs_static | Method: MSP
+  t=0.5     (Temperature=0.5000)  AuPRC=2.65798% | FPR@TPR95: 96.52347%
+  t=0.75    (Temperature=0.7500)  AuPRC=2.64618% | FPR@TPR95: 94.62649%
+  t=1.0     (Temperature=1.0000)  AuPRC=2.69433% | FPR@TPR95: 94.73300%
+  t=1.1     (Temperature=1.1000)  AuPRC=2.72053% | FPR@TPR95: 94.74318%
+  best      (Temperature=2.4508)  AuPRC=4.52000% | FPR@TPR95: 95.01719%
+============================================================
+
+Model: coco | Dataset: fs_static | Method: max_logit
+  t=0.5     (Temperature=0.5000)  AuPRC=7.11880% | FPR@TPR95: 74.70664%
+  t=0.75    (Temperature=0.7500)  AuPRC=7.11880% | FPR@TPR95: 74.70664%
+  t=1.0     (Temperature=1.0000)  AuPRC=7.11880% | FPR@TPR95: 74.70664%
+  t=1.1     (Temperature=1.1000)  AuPRC=7.11880% | FPR@TPR95: 74.70664%
+  best      (Temperature=2.4508)  AuPRC=7.11880% | FPR@TPR95: 74.70664%
+============================================================
