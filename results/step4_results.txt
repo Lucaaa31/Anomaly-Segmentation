@@ -1,9 +1,10 @@
-
-Method: MSP | Dataset: fs_static
-AUPRC: 7.47% | FPR@TPR95: 41.84%
-==================================================
-
-Method: get_rba | Dataset: fs_static
-AUPRC: 2.07191% | FPR@TPR95: 94.77774%
-==================================================
-
+# Section 3.1 - per-class strict IoU on Cityscapes val (500 imgs)
+# generated: 2026-06-04 16:10:40
+# label_space: strict | values in percent (%) | mIoU = mean of the 19 classes
+# eval: EoMT -> torchmetrics @ native res ; ERFNet -> iouEval @ 512x1024
+model,road,sidewalk,building,wall,fence,pole,traffic light,traffic sign,vegetation,terrain,sky,person,rider,car,truck,bus,train,motorcycle,bicycle,mIoU
+ERFNet,97.65,81.28,90.66,49.32,54.89,59.20,62.19,71.98,91.21,60.82,93.32,75.88,53.24,92.83,72.76,78.76,63.78,46.31,71.71,71.99
+EoMT-COCO,94.13,64.80,86.76,46.20,50.00,0.00,60.78,4.74,88.15,56.59,89.73,70.50,0.00,84.34,29.37,71.17,13.63,63.78,73.34,55.16
+EoMT-CS,98.40,87.36,94.15,66.07,65.49,71.04,75.00,82.13,93.02,66.60,95.54,85.38,71.11,95.54,81.79,90.32,77.36,74.35,81.27,81.68
+EoMT-COCO-FT-phased,98.10,85.30,93.03,63.81,63.71,62.83,69.06,77.01,92.34,67.98,94.92,82.47,63.78,94.58,77.86,84.56,70.54,61.28,77.13,77.91
+EoMT-COCO-FT-full,98.18,85.70,92.85,60.09,63.90,64.06,68.96,76.44,92.36,67.40,94.98,81.64,63.65,94.12,67.06,84.39,66.90,60.66,76.81,76.85
