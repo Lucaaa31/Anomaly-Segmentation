@@ -1,0 +1,8 @@
+Step 7 — ERFNet post-hoc anomaly detection (corrected)
+
+                                   SMIYC RA-21         SMIYC RO-21          FS L&F             FS Static         Road Anomaly
+Model    mIoU   Method             AuPRC     FPR95     AuPRC     FPR95     AuPRC     FPR95     AuPRC     FPR95     AuPRC     FPR95
+----------------------------------------------------------------------------------------------------------------------------------
+ERFNET   ----   MSP                    -         -         -         -         -         -         -         -         -         -
+                MaxLogit               -         -         -         -         -         -         -         -         -         -
+                Max Entropy            -         -         -         -         -         -         -         -         -         -
