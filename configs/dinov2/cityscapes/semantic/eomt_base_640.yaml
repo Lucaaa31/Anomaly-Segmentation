@@ -13,12 +13,12 @@ model:
     attn_mask_annealing_start_steps: [3317, 8292, 13268]
     attn_mask_annealing_end_steps: [6634, 11609, 16585]
     network:
-      class_path: models.eomt_eval.eomt.EoMT
+      class_path: models.eomt.EoMT
       init_args:
         num_q: 100
         num_blocks: 3
         encoder:
-          class_path: models.eomt_eval.vit.ViT
+          class_path: models.vit.ViT
           init_args:
             backbone_name: vit_base_patch14_reg4_dinov2
 data:
