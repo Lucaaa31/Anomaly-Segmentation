@@ -64,6 +64,32 @@ def build_coco_to_cs_lut(num_coco_classes, device):
     return lut
 
 
+def remap_coco_logits_to_cs(logits):
+    """Map COCO-panoptic per-pixel semantic logits to the Cityscapes 19-class space.
+
+    Args:
+        logits: tensor [C_coco, H, W] of per-pixel class scores in the COCO
+            continuous-id space (things 0..79, stuff 80..132).
+
+    Returns:
+        tensor [NUM_CS_CLASSES, H, W]. Each Cityscapes channel takes the max
+        score over the COCO ids that map to it (per `COCO_TO_CS`). Cityscapes
+        classes with no COCO source (e.g. pole, rider) are filled with the
+        global min score so they are never the argmax and contribute ~0
+        probability under softmax — this keeps MSP / MaxLogit / MaxEntropy
+        well-defined on the 19-class space for the COCO-trained model.
+    """
+    C, H, W = logits.shape
+    out = logits.new_full((NUM_CS_CLASSES, H, W), float(logits.min()))
+    inv = {}
+    for coco_id, cs_id in COCO_TO_CS.items():
+        if coco_id < C:
+            inv.setdefault(cs_id, []).append(coco_id)
+    for cs_id, coco_ids in inv.items():
+        out[cs_id] = logits[coco_ids].amax(dim=0)
+    return out
+
+
 # CS classes dropped from the GT under the 'common' label space (COCO has no
 # equivalent, so these would always score ~0 against a COCO-trained model).
 CS_DROP_IN_COMMON = (5, 7)  # pole, traffic sign

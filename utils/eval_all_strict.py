@@ -22,17 +22,17 @@ if str(REPO_ROOT) not in sys.path:
 
 # Importing utils.build also puts models/eomt on sys.path (so `datasets.*`,
 # `models.*`, `training.*` YAML class paths resolve).
-from utils.build import build_model_and_data  # noqa: E402
-from utils.class_remap import build_coco_to_cs_lut  # noqa: E402
-from utils.eval_semantic import (  # noqa: E402
+from utils.build import build_model_and_data
+from utils.class_remap import build_coco_to_cs_lut
+from utils.eval_semantic import ( 
     CS_CLASS_NAMES,
     evaluate_semantic,
     per_pixel_target,
 )
 
 from PIL import Image  # noqa: E402
-from torchvision.transforms import Compose, Normalize, Resize, ToTensor  # noqa: E402
-from torchvision.transforms.functional import to_pil_image  # noqa: E402
+from torchvision.transforms import Compose, Normalize, Resize, ToTensor 
+from torchvision.transforms.functional import to_pil_image 
 
 
 # --- default paths (resolve relative to the repo root / Drive mount) ---------
