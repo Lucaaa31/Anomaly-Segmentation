@@ -1,4 +1,3 @@
-Step 8 — EoMT anomaly detection — all models (baseline T=1.0)
 
                                   SMIYC RA-21         SMIYC RO-21            FS L&F            FS Static          Road Anomaly   
 Model            Method           AuPRC     FPR95     AuPRC     FPR95     AuPRC     FPR95     AuPRC     FPR95     AuPRC     FPR95
@@ -24,7 +23,8 @@ EoMT-FT-full     MSP              37.57     91.18     11.26     79.19     23.91 
                  RbA              53.53     43.87     12.28     39.67     22.38     17.41     44.55     21.92     43.92     23.04
 ---------------------------------------------------------------------------------------------------------------------------------
 
-Step 8 - EoMT temperature scaling (MSP) - model=EoMT-cityscapes
+
+
                                 SMIYC RA-21         SMIYC RO-21            FS L&F            FS Static          Road Anomaly   
 Method               mIoU       AuPRC     FPR95     AuPRC     FPR95     AuPRC     FPR95     AuPRC     FPR95     AuPRC     FPR95
 -------------------------------------------------------------------------------------------------------------------------------
