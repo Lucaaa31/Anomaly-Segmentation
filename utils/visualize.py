@@ -1,7 +1,4 @@
 """Visualization helpers: Cityscapes color palette and semantic / panoptic renderers.
-
-These are pure rendering utilities (no torch model calls). They consume already-computed
-predictions / targets and produce numpy RGB arrays or save matplotlib figures to disk.
 """
 
 import matplotlib.pyplot as plt

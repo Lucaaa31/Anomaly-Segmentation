@@ -5,9 +5,6 @@ pipeline. Predictions whose COCO continuous id has no Cityscapes counterpart are
 treated as ignore (do not contribute to mIoU). This is the "strict" choice: the
 COCO model gets no credit for unmappable predictions.
 
-Continuous ids come from `eomt/datasets/coco_panoptic.py::CLASS_MAPPING` (orig COCO
-id -> 0..132): things 0..79, stuff 80..132. Anything not listed here is unmappable.
-
 Notes:
     - "rider" and "pole" have no COCO equivalent.
     - "traffic sign" is mapped from stop sign (the closest COCO category).
@@ -17,8 +14,6 @@ This module also exposes a 'common' label space (the intersection of what COCO a
 Cityscapes can both express). Under the common space the GT is reduced before the
 metric: `pole` and `traffic sign` (which COCO essentially cannot predict) are set
 to ignore, and `rider` is merged into `person` (COCO does not distinguish them).
-The strict numbers stay the headline result; the common-space numbers are a fairer
-cross-dataset comparison reported on a reduced class set.
 """
 
 import torch

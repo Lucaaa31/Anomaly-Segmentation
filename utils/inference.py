@@ -1,10 +1,4 @@
 """Per-image EoMT inference helpers (semantic and panoptic).
-
-Both helpers run on a single image (CHW tensor) and return logits / preds aligned to
-the original image size, using the model's own windowing / padding utilities defined
-in `eomt/training/lightning_module.py`. They are thin wrappers — anything that can be
-shared between the eval pipeline and other downstream tasks (e.g. anomaly scoring on
-saved logits) lives here.
 """
 
 import torch

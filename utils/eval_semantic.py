@@ -5,23 +5,9 @@ semantic mIoU pipeline. The COCO->CS class map (in `utils.class_remap`) is the b
 that lets all three be compared on the same metric: predictions whose COCO continuous
 id has no Cityscapes counterpart are treated as ignore (do not contribute to mIoU).
 
-This module is intentionally narrow — it owns only the things that touch the mIoU
-metric itself (per-pixel target conversion, the per-class IoU loop, the printable
-table, and the CLI orchestration). Model / data construction lives in `utils.build`,
-inference primitives in `utils.inference`, COCO->CS remap in `utils.class_remap`,
-and visualizations in `utils.visualize`.
-
 A `label_space` flag selects between "strict" (full 19 CS classes; default) and
 "common" (drop pole and traffic sign from the GT, merge rider into person — the
-intersection of the COCO and CS class spaces, useful as a fairer cross-dataset
-comparison reported on a reduced set of classes).
-
-Usage (run from repo root):
-
-    python utils/eval_semantic.py --data-path /path/with/cityscapes_zips
-    python utils/eval_semantic.py --data-path ... --model cs --num-vis 8
-    python utils/eval_semantic.py --data-path ... --model coco
-    python utils/eval_semantic.py --data-path ... --label-space common
+intersection of the COCO and CS class spaces).
 """
 
 import argparse
@@ -30,9 +16,6 @@ from pathlib import Path
 
 import torch
 
-# Bootstrap so `python utils/eval_semantic.py ...` (run as a script) can resolve
-# the `utils.X` absolute imports below. When imported as a library (e.g. from a
-# notebook), the caller has already put REPO_ROOT on sys.path and this is a no-op.
 REPO_ROOT = Path(__file__).resolve().parent.parent
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
@@ -72,32 +55,8 @@ def evaluate_semantic(
     model, dataset, device, lut=None, label_space="strict", max_images=-1,
     num_vis=0, vis_dir=None, vis_prefix="vis", log_every=50,
 ):
-    """Compute per-class IoU on `dataset` using `model`.
+    """Compute per-class IoU on `dataset` using `model`."""
 
-    If `lut` is provided, raw model predictions are remapped through it
-    (COCO continuous id -> Cityscapes train_id). Pixels whose prediction is
-    unmappable (lut value == IGNORE_INDEX) are excluded from the metric by
-    masking the target to ignore.
-
-    `label_space`:
-        - "strict" (default): full 19 CS classes in the GT. Fair to the
-          CS-trained model; harsh on the COCO-trained one because it cannot
-          express rider/pole and only partially expresses traffic sign.
-        - "common": GT is reduced to the intersection of the COCO and CS class
-          spaces (pole and traffic sign -> ignore, rider -> person). Predictions
-          are also rider->person remapped so a correct rider prediction counts
-          as person. Drop classes appear as NaN in the per-class result and are
-          skipped from the mean. Fairer cross-dataset comparison, but reported
-          over fewer classes.
-        - tuple/list of the above (e.g. ("strict","common")) -> compute both in
-          one pass over the dataset and return a {space: tensor} dict.
-
-    Returns a [NUM_CS_CLASSES] IoU tensor on CPU when `label_space` is a string,
-    or a dict {space: tensor} when it is a sequence.
-
-    If `num_vis > 0` and `vis_dir` is given, saves up to `num_vis` semantic
-    visualizations as `{vis_prefix}_{idx:04d}.png` (uses the first label space
-    in the list for the saved pred/target — typically 'strict')."""
     multi = not isinstance(label_space, str)
     spaces = tuple(label_space) if multi else (label_space,)
     for s in spaces:

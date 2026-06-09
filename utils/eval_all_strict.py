@@ -1,9 +1,5 @@
 """Evaluate all 5 models on the FULL Cityscapes val split (500 imgs) and cache
 per-class strict IoU to results/step4_results.txt.
-Usage (from repo root, on Colab after mounting Drive):
-    !python utils/eval_all_strict.py
-    !python utils/eval_all_strict.py --max-images 20          # quick smoke test
-    !python utils/eval_all_strict.py --only ERFNet EoMT-CS    # subset
 """
 
 import argparse
@@ -99,21 +95,21 @@ def evaluate_erfnet_strict(model, val_dataset, device, max_images=-1, log_every=
 
     n = len(val_dataset) if max_images <= 0 else min(max_images, len(val_dataset))
     for i in range(n):
-        img, tgt = val_dataset[i]                       # img: uint8 [3,1024,2048]
+        img, tgt = val_dataset[i]                       
         x = tf(to_pil_image(img)).unsqueeze(0).to(device)
-        pred = model(x).argmax(1, keepdim=True)         # [1,1,512,1024], ids 0..19
+        pred = model(x).argmax(1, keepdim=True)        
 
-        gt = per_pixel_target(tgt).to(device)           # [1024,2048], {0..18, 255}
+        gt = per_pixel_target(tgt).to(device)           
         gt = F.interpolate(
             gt[None, None].float(), size=ERFNET_SIZE, mode="nearest"
-        )[0].long()                                     # [1,512,1024]
-        gt[gt == 255] = 19                              # void -> iouEval ignore id
+        )[0].long()                                     
+        gt[gt == 255] = 19                              
 
-        iou.addBatch(pred, gt[None])                    # x,y both [1,1,H,W]
+        iou.addBatch(pred, gt[None])                    
         if log_every and (i + 1) % log_every == 0:
             print(f"  erfnet {i + 1}/{n}")
 
-    mean_iou, per_class = iou.getIoU()                  # per_class: 19 values
+    mean_iou, per_class = iou.getIoU()                 
     return (per_class * 100).tolist(), mean_iou.item() * 100
 
 
