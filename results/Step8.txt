@@ -5,489 +5,242 @@ CELL 1 — All Models × All Datasets (T=1.0, no temperature scaling)
 ======================================================================
 
 Model: coco | Dataset: fs_static | Temperature: none (T=1.0000) | Method: MSP
-AUPRC: 14.42532% | FPR@TPR95: 70.58251%
+AUPRC: 80.09354% | FPR@TPR95: 16.66014%
 ----------------------------------------------------------------------
 Model: coco | Dataset: fs_static | Temperature: none (T=1.0000) | Method: max_logit
-AUPRC: 72.42664% | FPR@TPR95: 61.46580%
+AUPRC: 80.83261% | FPR@TPR95: 15.08860%
 ----------------------------------------------------------------------
 Model: coco | Dataset: fs_static | Temperature: none (T=1.0000) | Method: max_entropy
-AUPRC: 23.21150% | FPR@TPR95: 70.25083%
+AUPRC: 82.15414% | FPR@TPR95: 14.06452%
 ----------------------------------------------------------------------
 Model: coco | Dataset: fs_static | Temperature: none (T=1.0000) | Method: RbA
-AUPRC: 57.29753% | FPR@TPR95: 65.90530%
+AUPRC: 84.67069% | FPR@TPR95: 46.56017%
 ----------------------------------------------------------------------
 Model: coco | Dataset: RoadAnomaly21 | Temperature: none (T=1.0000) | Method: MSP
-AUPRC: 21.08734% | FPR@TPR95: 81.57470%
+AUPRC: 56.89432% | FPR@TPR95: 39.53866%
 ----------------------------------------------------------------------
 Model: coco | Dataset: RoadAnomaly21 | Temperature: none (T=1.0000) | Method: max_logit
-AUPRC: 57.02973% | FPR@TPR95: 62.89358%
+AUPRC: 58.59061% | FPR@TPR95: 32.30627%
 ----------------------------------------------------------------------
 Model: coco | Dataset: RoadAnomaly21 | Temperature: none (T=1.0000) | Method: max_entropy
-AUPRC: 25.78050% | FPR@TPR95: 77.14853%
+AUPRC: 59.69532% | FPR@TPR95: 25.58948%
 ----------------------------------------------------------------------
 Model: coco | Dataset: RoadAnomaly21 | Temperature: none (T=1.0000) | Method: RbA
-AUPRC: 45.74503% | FPR@TPR95: 90.10947%
+AUPRC: 51.09130% | FPR@TPR95: 59.44504%
 ----------------------------------------------------------------------
 Model: coco | Dataset: RoadAnomaly | Temperature: none (T=1.0000) | Method: MSP
-AUPRC: 28.20502% | FPR@TPR95: 90.32837%
+AUPRC: 82.24382% | FPR@TPR95: 89.04498%
 ----------------------------------------------------------------------
 Model: coco | Dataset: RoadAnomaly | Temperature: none (T=1.0000) | Method: max_logit
-AUPRC: 67.55858% | FPR@TPR95: 81.09472%
+AUPRC: 82.24697% | FPR@TPR95: 87.95980%
 ----------------------------------------------------------------------
 Model: coco | Dataset: RoadAnomaly | Temperature: none (T=1.0000) | Method: max_entropy
-AUPRC: 36.94502% | FPR@TPR95: 95.12778%
+AUPRC: 82.23737% | FPR@TPR95: 86.75712%
 ----------------------------------------------------------------------
 Model: coco | Dataset: RoadAnomaly | Temperature: none (T=1.0000) | Method: RbA
-AUPRC: 71.89176% | FPR@TPR95: 61.32517%
-----------------------------------------------------------------------
-Model: coco | Dataset: RoadObsticle21 | Temperature: none (T=1.0000) | Method: MSP
-AUPRC: 0.53991% | FPR@TPR95: 99.97513%
-----------------------------------------------------------------------
-Model: coco | Dataset: RoadObsticle21 | Temperature: none (T=1.0000) | Method: max_logit
-AUPRC: 53.41701% | FPR@TPR95: 99.98262%
-----------------------------------------------------------------------
-Model: coco | Dataset: RoadObsticle21 | Temperature: none (T=1.0000) | Method: max_entropy
-AUPRC: 0.78768% | FPR@TPR95: 99.99705%
-----------------------------------------------------------------------
-Model: coco | Dataset: RoadObsticle21 | Temperature: none (T=1.0000) | Method: RbA
-AUPRC: 78.42548% | FPR@TPR95: 64.31506%
-----------------------------------------------------------------------
-Model: cityscapes | Dataset: fs_static | Temperature: none (T=1.0000) | Method: MSP
-AUPRC: 53.00333% | FPR@TPR95: 76.85897%
-----------------------------------------------------------------------
-Model: cityscapes | Dataset: fs_static | Temperature: none (T=1.0000) | Method: max_logit
-AUPRC: 53.40233% | FPR@TPR95: 77.52201%
-----------------------------------------------------------------------
-Model: cityscapes | Dataset: fs_static | Temperature: none (T=1.0000) | Method: max_entropy
-AUPRC: 53.53059% | FPR@TPR95: 76.86784%
-----------------------------------------------------------------------
-Model: cityscapes | Dataset: fs_static | Temperature: none (T=1.0000) | Method: RbA
-AUPRC: 1.23852% | FPR@TPR95: 99.99997%
-----------------------------------------------------------------------
-Model: cityscapes | Dataset: RoadAnomaly21 | Temperature: none (T=1.0000) | Method: MSP
-AUPRC: 69.57744% | FPR@TPR95: 17.64217%
-----------------------------------------------------------------------
-Model: cityscapes | Dataset: RoadAnomaly21 | Temperature: none (T=1.0000) | Method: max_logit
-AUPRC: 72.84868% | FPR@TPR95: 20.91633%
-----------------------------------------------------------------------
-Model: cityscapes | Dataset: RoadAnomaly21 | Temperature: none (T=1.0000) | Method: max_entropy
-AUPRC: 71.41676% | FPR@TPR95: 17.59971%
-----------------------------------------------------------------------
-Model: cityscapes | Dataset: RoadAnomaly21 | Temperature: none (T=1.0000) | Method: RbA
-AUPRC: 8.85334% | FPR@TPR95: 99.79126%
-----------------------------------------------------------------------
-Model: cityscapes | Dataset: RoadAnomaly | Temperature: none (T=1.0000) | Method: MSP
-AUPRC: 73.13265% | FPR@TPR95: 32.75976%
-----------------------------------------------------------------------
-Model: cityscapes | Dataset: RoadAnomaly | Temperature: none (T=1.0000) | Method: max_logit
-AUPRC: 70.90262% | FPR@TPR95: 45.01210%
-----------------------------------------------------------------------
-Model: cityscapes | Dataset: RoadAnomaly | Temperature: none (T=1.0000) | Method: max_entropy
-AUPRC: 75.20174% | FPR@TPR95: 32.49162%
-----------------------------------------------------------------------
-Model: cityscapes | Dataset: RoadAnomaly | Temperature: none (T=1.0000) | Method: RbA
-AUPRC: 5.71452% | FPR@TPR95: 99.79734%
-----------------------------------------------------------------------
-Model: cityscapes | Dataset: RoadObsticle21 | Temperature: none (T=1.0000) | Method: MSP
-AUPRC: 51.72962% | FPR@TPR95: 99.99962%
-----------------------------------------------------------------------
-Model: cityscapes | Dataset: RoadObsticle21 | Temperature: none (T=1.0000) | Method: max_logit
-AUPRC: 48.73370% | FPR@TPR95: 99.99958%
-----------------------------------------------------------------------
-Model: cityscapes | Dataset: RoadObsticle21 | Temperature: none (T=1.0000) | Method: max_entropy
-AUPRC: 51.92663% | FPR@TPR95: 99.99967%
-----------------------------------------------------------------------
-Model: cityscapes | Dataset: RoadObsticle21 | Temperature: none (T=1.0000) | Method: RbA
-AUPRC: 2.84330% | FPR@TPR95: 100.00000%
-----------------------------------------------------------------------
-Model: phased | Dataset: fs_static | Temperature: none (T=1.0000) | Method: MSP
-AUPRC: 72.89321% | FPR@TPR95: 15.13712%
-----------------------------------------------------------------------
-Model: phased | Dataset: fs_static | Temperature: none (T=1.0000) | Method: max_logit
-AUPRC: 59.09901% | FPR@TPR95: 16.19000%
-----------------------------------------------------------------------
-Model: phased | Dataset: fs_static | Temperature: none (T=1.0000) | Method: max_entropy
-AUPRC: 74.98929% | FPR@TPR95: 14.99261%
-----------------------------------------------------------------------
-Model: phased | Dataset: fs_static | Temperature: none (T=1.0000) | Method: RbA
-AUPRC: 1.26711% | FPR@TPR95: 99.99918%
-----------------------------------------------------------------------
-Model: phased | Dataset: RoadAnomaly21 | Temperature: none (T=1.0000) | Method: MSP
-AUPRC: 57.79458% | FPR@TPR95: 95.95742%
-----------------------------------------------------------------------
-Model: phased | Dataset: RoadAnomaly21 | Temperature: none (T=1.0000) | Method: max_logit
-AUPRC: 67.32848% | FPR@TPR95: 95.71259%
-----------------------------------------------------------------------
-Model: phased | Dataset: RoadAnomaly21 | Temperature: none (T=1.0000) | Method: max_entropy
-AUPRC: 57.02917% | FPR@TPR95: 95.91138%
-----------------------------------------------------------------------
-Model: phased | Dataset: RoadAnomaly21 | Temperature: none (T=1.0000) | Method: RbA
-AUPRC: 41.01726% | FPR@TPR95: 99.59203%
-----------------------------------------------------------------------
-Model: phased | Dataset: RoadAnomaly | Temperature: none (T=1.0000) | Method: MSP
-AUPRC: 55.16079% | FPR@TPR95: 82.39770%
-----------------------------------------------------------------------
-Model: phased | Dataset: RoadAnomaly | Temperature: none (T=1.0000) | Method: max_logit
-AUPRC: 58.78168% | FPR@TPR95: 37.22443%
-----------------------------------------------------------------------
-Model: phased | Dataset: RoadAnomaly | Temperature: none (T=1.0000) | Method: max_entropy
-AUPRC: 55.95157% | FPR@TPR95: 83.00736%
-----------------------------------------------------------------------
-Model: phased | Dataset: RoadAnomaly | Temperature: none (T=1.0000) | Method: RbA
-AUPRC: 37.78475% | FPR@TPR95: 99.68000%
-----------------------------------------------------------------------
-Model: phased | Dataset: RoadObsticle21 | Temperature: none (T=1.0000) | Method: MSP
-AUPRC: 24.07465% | FPR@TPR95: 99.95602%
-----------------------------------------------------------------------
-Model: phased | Dataset: RoadObsticle21 | Temperature: none (T=1.0000) | Method: max_logit
-AUPRC: 60.34222% | FPR@TPR95: 68.23355%
-----------------------------------------------------------------------
-Model: phased | Dataset: RoadObsticle21 | Temperature: none (T=1.0000) | Method: max_entropy
-AUPRC: 24.08640% | FPR@TPR95: 99.95843%
-----------------------------------------------------------------------
-Model: phased | Dataset: RoadObsticle21 | Temperature: none (T=1.0000) | Method: RbA
-AUPRC: 64.09236% | FPR@TPR95: 99.99987%
-----------------------------------------------------------------------
-Model: full | Dataset: fs_static | Temperature: none (T=1.0000) | Method: MSP
-AUPRC: 48.25927% | FPR@TPR95: 46.58156%
-----------------------------------------------------------------------
-Model: full | Dataset: fs_static | Temperature: none (T=1.0000) | Method: max_logit
-AUPRC: 53.22789% | FPR@TPR95: 65.46788%
-----------------------------------------------------------------------
-Model: full | Dataset: fs_static | Temperature: none (T=1.0000) | Method: max_entropy
-AUPRC: 48.90643% | FPR@TPR95: 50.12279%
-----------------------------------------------------------------------
-Model: full | Dataset: fs_static | Temperature: none (T=1.0000) | Method: RbA
-AUPRC: 1.65872% | FPR@TPR95: 99.99896%
-----------------------------------------------------------------------
-Model: full | Dataset: RoadAnomaly21 | Temperature: none (T=1.0000) | Method: MSP
-AUPRC: 37.38895% | FPR@TPR95: 91.17735%
-----------------------------------------------------------------------
-Model: full | Dataset: RoadAnomaly21 | Temperature: none (T=1.0000) | Method: max_logit
-AUPRC: 37.78781% | FPR@TPR95: 90.17191%
-----------------------------------------------------------------------
-Model: full | Dataset: RoadAnomaly21 | Temperature: none (T=1.0000) | Method: max_entropy
-AUPRC: 36.90115% | FPR@TPR95: 91.16818%
-----------------------------------------------------------------------
-Model: full | Dataset: RoadAnomaly21 | Temperature: none (T=1.0000) | Method: RbA
-AUPRC: 26.75374% | FPR@TPR95: 99.58211%
-----------------------------------------------------------------------
-Model: full | Dataset: RoadAnomaly | Temperature: none (T=1.0000) | Method: MSP
-AUPRC: 37.46189% | FPR@TPR95: 75.64559%
-----------------------------------------------------------------------
-Model: full | Dataset: RoadAnomaly | Temperature: none (T=1.0000) | Method: max_logit
-AUPRC: 44.07408% | FPR@TPR95: 63.50504%
-----------------------------------------------------------------------
-Model: full | Dataset: RoadAnomaly | Temperature: none (T=1.0000) | Method: max_entropy
-AUPRC: 39.02753% | FPR@TPR95: 76.63377%
-----------------------------------------------------------------------
-Model: full | Dataset: RoadAnomaly | Temperature: none (T=1.0000) | Method: RbA
-AUPRC: 16.05168% | FPR@TPR95: 98.84946%
-----------------------------------------------------------------------
-Model: full | Dataset: RoadObsticle21 | Temperature: none (T=1.0000) | Method: MSP
-AUPRC: 11.25546% | FPR@TPR95: 79.19173%
-----------------------------------------------------------------------
-Model: full | Dataset: RoadObsticle21 | Temperature: none (T=1.0000) | Method: max_logit
-AUPRC: 24.81312% | FPR@TPR95: 99.99022%
-----------------------------------------------------------------------
-Model: full | Dataset: RoadObsticle21 | Temperature: none (T=1.0000) | Method: max_entropy
-AUPRC: 13.14131% | FPR@TPR95: 79.21481%
-----------------------------------------------------------------------
-Model: full | Dataset: RoadObsticle21 | Temperature: none (T=1.0000) | Method: RbA
-AUPRC: 14.54539% | FPR@TPR95: 99.88281%
+AUPRC: 80.81098% | FPR@TPR95: 74.36051%
 ----------------------------------------------------------------------
 Model: coco | Dataset: FS_LostFound_full | Temperature: none (T=1.0000) | Method: MSP
-AUPRC: 0.60% | FPR@TPR95: 80.90%
+AUPRC: 1.31929% | FPR@TPR95: 96.60396%
 ----------------------------------------------------------------------
 Model: coco | Dataset: FS_LostFound_full | Temperature: none (T=1.0000) | Method: max_logit
-AUPRC: 0.54% | FPR@TPR95: 92.04%
+AUPRC: 1.24048% | FPR@TPR95: 96.64034%
 ----------------------------------------------------------------------
 Model: coco | Dataset: FS_LostFound_full | Temperature: none (T=1.0000) | Method: max_entropy
-AUPRC: 0.62% | FPR@TPR95: 80.97%
+AUPRC: 0.98918% | FPR@TPR95: 96.65924%
 ----------------------------------------------------------------------
 Model: coco | Dataset: FS_LostFound_full | Temperature: none (T=1.0000) | Method: RbA
-AUPRC: 1.80% | FPR@TPR95: 96.31%
+AUPRC: 0.32246% | FPR@TPR95: 97.81533%
+----------------------------------------------------------------------
+Model: coco | Dataset: RoadObsticle21 | Temperature: none (T=1.0000) | Method: MSP
+AUPRC: 74.60481% | FPR@TPR95: 11.99153%
+----------------------------------------------------------------------
+Model: coco | Dataset: RoadObsticle21 | Temperature: none (T=1.0000) | Method: max_logit
+AUPRC: 74.62584% | FPR@TPR95: 12.43787%
+----------------------------------------------------------------------
+Model: coco | Dataset: RoadObsticle21 | Temperature: none (T=1.0000) | Method: max_entropy
+AUPRC: 73.81669% | FPR@TPR95: 42.41381%
+----------------------------------------------------------------------
+Model: coco | Dataset: RoadObsticle21 | Temperature: none (T=1.0000) | Method: RbA
+AUPRC: 72.04601% | FPR@TPR95: 94.77557%
+----------------------------------------------------------------------
+Model: cityscapes | Dataset: fs_static | Temperature: none (T=1.0000) | Method: MSP
+AUPRC: 54.32275% | FPR@TPR95: 35.20257%
+----------------------------------------------------------------------
+Model: cityscapes | Dataset: fs_static | Temperature: none (T=1.0000) | Method: max_logit
+AUPRC: 54.46293% | FPR@TPR95: 34.84223%
+----------------------------------------------------------------------
+Model: cityscapes | Dataset: fs_static | Temperature: none (T=1.0000) | Method: max_entropy
+AUPRC: 52.68332% | FPR@TPR95: 35.11741%
+----------------------------------------------------------------------
+Model: cityscapes | Dataset: fs_static | Temperature: none (T=1.0000) | Method: RbA
+AUPRC: 56.08600% | FPR@TPR95: 82.69774%
+----------------------------------------------------------------------
+Model: cityscapes | Dataset: RoadAnomaly21 | Temperature: none (T=1.0000) | Method: MSP
+AUPRC: 74.30349% | FPR@TPR95: 33.43364%
+----------------------------------------------------------------------
+Model: cityscapes | Dataset: RoadAnomaly21 | Temperature: none (T=1.0000) | Method: max_logit
+AUPRC: 73.87094% | FPR@TPR95: 33.54678%
+----------------------------------------------------------------------
+Model: cityscapes | Dataset: RoadAnomaly21 | Temperature: none (T=1.0000) | Method: max_entropy
+AUPRC: 76.75602% | FPR@TPR95: 33.30519%
+----------------------------------------------------------------------
+Model: cityscapes | Dataset: RoadAnomaly21 | Temperature: none (T=1.0000) | Method: RbA
+AUPRC: 69.87692% | FPR@TPR95: 79.87680%
+----------------------------------------------------------------------
+Model: cityscapes | Dataset: RoadAnomaly | Temperature: none (T=1.0000) | Method: MSP
+AUPRC: 75.67532% | FPR@TPR95: 19.33377%
+----------------------------------------------------------------------
+Model: cityscapes | Dataset: RoadAnomaly | Temperature: none (T=1.0000) | Method: max_logit
+AUPRC: 75.15482% | FPR@TPR95: 19.08381%
+----------------------------------------------------------------------
+Model: cityscapes | Dataset: RoadAnomaly | Temperature: none (T=1.0000) | Method: max_entropy
+AUPRC: 77.61652% | FPR@TPR95: 18.82252%
+----------------------------------------------------------------------
+Model: cityscapes | Dataset: RoadAnomaly | Temperature: none (T=1.0000) | Method: RbA
+AUPRC: 74.46220% | FPR@TPR95: 20.39809%
 ----------------------------------------------------------------------
 Model: cityscapes | Dataset: FS_LostFound_full | Temperature: none (T=1.0000) | Method: MSP
-AUPRC: 28.85% | FPR@TPR95: 14.94%
+AUPRC: 25.41736% | FPR@TPR95: 14.88846%
 ----------------------------------------------------------------------
 Model: cityscapes | Dataset: FS_LostFound_full | Temperature: none (T=1.0000) | Method: max_logit
-AUPRC: 26.44% | FPR@TPR95: 16.44%
+AUPRC: 25.44427% | FPR@TPR95: 14.63549%
 ----------------------------------------------------------------------
 Model: cityscapes | Dataset: FS_LostFound_full | Temperature: none (T=1.0000) | Method: max_entropy
-AUPRC: 31.16% | FPR@TPR95: 15.54%
+AUPRC: 27.96048% | FPR@TPR95: 14.70203%
 ----------------------------------------------------------------------
 Model: cityscapes | Dataset: FS_LostFound_full | Temperature: none (T=1.0000) | Method: RbA
-AUPRC: 0.15% | FPR@TPR95: 99.96%
+AUPRC: 25.96942% | FPR@TPR95: 8.75919%
+----------------------------------------------------------------------
+Model: cityscapes | Dataset: RoadObsticle21 | Temperature: none (T=1.0000) | Method: MSP
+AUPRC: 7.90289% | FPR@TPR95: 16.59079%
+----------------------------------------------------------------------
+Model: cityscapes | Dataset: RoadObsticle21 | Temperature: none (T=1.0000) | Method: max_logit
+AUPRC: 7.92918% | FPR@TPR95: 16.73504%
+----------------------------------------------------------------------
+Model: cityscapes | Dataset: RoadObsticle21 | Temperature: none (T=1.0000) | Method: max_entropy
+AUPRC: 8.85600% | FPR@TPR95: 17.64055%
+----------------------------------------------------------------------
+Model: cityscapes | Dataset: RoadObsticle21 | Temperature: none (T=1.0000) | Method: RbA
+AUPRC: 8.17399% | FPR@TPR95: 93.73209%
+----------------------------------------------------------------------
+Model: phased | Dataset: fs_static | Temperature: none (T=1.0000) | Method: MSP
+AUPRC: 78.13839% | FPR@TPR95: 11.27160%
+----------------------------------------------------------------------
+Model: phased | Dataset: fs_static | Temperature: none (T=1.0000) | Method: max_logit
+AUPRC: 78.55410% | FPR@TPR95: 11.02089%
+----------------------------------------------------------------------
+Model: phased | Dataset: fs_static | Temperature: none (T=1.0000) | Method: max_entropy
+AUPRC: 79.02381% | FPR@TPR95: 10.96916%
+----------------------------------------------------------------------
+Model: phased | Dataset: fs_static | Temperature: none (T=1.0000) | Method: RbA
+AUPRC: 82.24403% | FPR@TPR95: 5.83008%
+----------------------------------------------------------------------
+Model: phased | Dataset: RoadAnomaly21 | Temperature: none (T=1.0000) | Method: MSP
+AUPRC: 63.38814% | FPR@TPR95: 99.97319%
+----------------------------------------------------------------------
+Model: phased | Dataset: RoadAnomaly21 | Temperature: none (T=1.0000) | Method: max_logit
+AUPRC: 63.12119% | FPR@TPR95: 99.96876%
+----------------------------------------------------------------------
+Model: phased | Dataset: RoadAnomaly21 | Temperature: none (T=1.0000) | Method: max_entropy
+AUPRC: 63.40634% | FPR@TPR95: 99.96957%
+----------------------------------------------------------------------
+Model: phased | Dataset: RoadAnomaly21 | Temperature: none (T=1.0000) | Method: RbA
+AUPRC: 57.02964% | FPR@TPR95: 99.19792%
+----------------------------------------------------------------------
+Model: phased | Dataset: RoadAnomaly | Temperature: none (T=1.0000) | Method: MSP
+AUPRC: 73.47283% | FPR@TPR95: 18.85088%
+----------------------------------------------------------------------
+Model: phased | Dataset: RoadAnomaly | Temperature: none (T=1.0000) | Method: max_logit
+AUPRC: 73.25091% | FPR@TPR95: 18.45374%
+----------------------------------------------------------------------
+Model: phased | Dataset: RoadAnomaly | Temperature: none (T=1.0000) | Method: max_entropy
+AUPRC: 73.65797% | FPR@TPR95: 18.00933%
+----------------------------------------------------------------------
+Model: phased | Dataset: RoadAnomaly | Temperature: none (T=1.0000) | Method: RbA
+AUPRC: 71.39422% | FPR@TPR95: 13.28350%
 ----------------------------------------------------------------------
 Model: phased | Dataset: FS_LostFound_full | Temperature: none (T=1.0000) | Method: MSP
-AUPRC: 43.67% | FPR@TPR95: 32.38%
+AUPRC: 43.59592% | FPR@TPR95: 21.65361%
 ----------------------------------------------------------------------
 Model: phased | Dataset: FS_LostFound_full | Temperature: none (T=1.0000) | Method: max_logit
-AUPRC: 20.92% | FPR@TPR95: 28.70%
+AUPRC: 43.76432% | FPR@TPR95: 21.17283%
 ----------------------------------------------------------------------
 Model: phased | Dataset: FS_LostFound_full | Temperature: none (T=1.0000) | Method: max_entropy
-AUPRC: 43.26% | FPR@TPR95: 31.55%
+AUPRC: 41.80077% | FPR@TPR95: 21.21234%
 ----------------------------------------------------------------------
 Model: phased | Dataset: FS_LostFound_full | Temperature: none (T=1.0000) | Method: RbA
-AUPRC: 0.15% | FPR@TPR95: 99.99%
+AUPRC: 44.99198% | FPR@TPR95: 42.12546%
+----------------------------------------------------------------------
+Model: phased | Dataset: RoadObsticle21 | Temperature: none (T=1.0000) | Method: MSP
+AUPRC: 12.69322% | FPR@TPR95: 6.71425%
+----------------------------------------------------------------------
+Model: phased | Dataset: RoadObsticle21 | Temperature: none (T=1.0000) | Method: max_logit
+AUPRC: 12.75989% | FPR@TPR95: 6.46006%
+----------------------------------------------------------------------
+Model: phased | Dataset: RoadObsticle21 | Temperature: none (T=1.0000) | Method: max_entropy
+AUPRC: 11.69106% | FPR@TPR95: 6.03515%
+----------------------------------------------------------------------
+Model: phased | Dataset: RoadObsticle21 | Temperature: none (T=1.0000) | Method: RbA
+AUPRC: 12.46742% | FPR@TPR95: 69.98799%
+----------------------------------------------------------------------
+Model: full | Dataset: fs_static | Temperature: none (T=1.0000) | Method: MSP
+AUPRC: 71.83402% | FPR@TPR95: 13.33323%
+----------------------------------------------------------------------
+Model: full | Dataset: fs_static | Temperature: none (T=1.0000) | Method: max_logit
+AUPRC: 72.34637% | FPR@TPR95: 13.04457%
+----------------------------------------------------------------------
+Model: full | Dataset: fs_static | Temperature: none (T=1.0000) | Method: max_entropy
+AUPRC: 73.09492% | FPR@TPR95: 12.76386%
+----------------------------------------------------------------------
+Model: full | Dataset: fs_static | Temperature: none (T=1.0000) | Method: RbA
+AUPRC: 75.56322% | FPR@TPR95: 8.28772%
+----------------------------------------------------------------------
+Model: full | Dataset: RoadAnomaly21 | Temperature: none (T=1.0000) | Method: MSP
+AUPRC: 53.22508% | FPR@TPR95: 98.19491%
+----------------------------------------------------------------------
+Model: full | Dataset: RoadAnomaly21 | Temperature: none (T=1.0000) | Method: max_logit
+AUPRC: 53.04607% | FPR@TPR95: 98.10690%
+----------------------------------------------------------------------
+Model: full | Dataset: RoadAnomaly21 | Temperature: none (T=1.0000) | Method: max_entropy
+AUPRC: 52.84670% | FPR@TPR95: 96.27450%
+----------------------------------------------------------------------
+Model: full | Dataset: RoadAnomaly21 | Temperature: none (T=1.0000) | Method: RbA
+AUPRC: 41.20863% | FPR@TPR95: 92.89278%
+----------------------------------------------------------------------
+Model: full | Dataset: RoadAnomaly | Temperature: none (T=1.0000) | Method: MSP
+AUPRC: 60.03467% | FPR@TPR95: 17.28684%
+----------------------------------------------------------------------
+Model: full | Dataset: RoadAnomaly | Temperature: none (T=1.0000) | Method: max_logit
+AUPRC: 59.73081% | FPR@TPR95: 17.11126%
+----------------------------------------------------------------------
+Model: full | Dataset: RoadAnomaly | Temperature: none (T=1.0000) | Method: max_entropy
+AUPRC: 60.47224% | FPR@TPR95: 16.74217%
+----------------------------------------------------------------------
+Model: full | Dataset: RoadAnomaly | Temperature: none (T=1.0000) | Method: RbA
+AUPRC: 57.50763% | FPR@TPR95: 16.43912%
 ----------------------------------------------------------------------
 Model: full | Dataset: FS_LostFound_full | Temperature: none (T=1.0000) | Method: MSP
-AUPRC: 24.65% | FPR@TPR95: 36.52%
+AUPRC: 41.92691% | FPR@TPR95: 16.60022%
 ----------------------------------------------------------------------
 Model: full | Dataset: FS_LostFound_full | Temperature: none (T=1.0000) | Method: max_logit
-AUPRC: 25.30% | FPR@TPR95: 35.92%
+AUPRC: 42.12380% | FPR@TPR95: 16.01159%
 ----------------------------------------------------------------------
 Model: full | Dataset: FS_LostFound_full | Temperature: none (T=1.0000) | Method: max_entropy
-AUPRC: 25.79% | FPR@TPR95: 36.78%
+AUPRC: 41.51626% | FPR@TPR95: 15.74237%
 ----------------------------------------------------------------------
 Model: full | Dataset: FS_LostFound_full | Temperature: none (T=1.0000) | Method: RbA
-AUPRC: 0.18% | FPR@TPR95: 99.96%
+AUPRC: 42.99930% | FPR@TPR95: 27.03588%
 ----------------------------------------------------------------------
-
-
-
-CELL 2 — Cityscapes Model × All Datasets × Temperature Grid
-======================================================================
-
-Model: cityscapes | Dataset: fs_static | Temperature: 0.5 (T=0.5000) | Method: MSP
-AUPRC: 51.20571% | FPR@TPR95: 84.77989%
+Model: full | Dataset: RoadObsticle21 | Temperature: none (T=1.0000) | Method: MSP
+AUPRC: 10.67759% | FPR@TPR95: 7.72632%
 ----------------------------------------------------------------------
-Model: cityscapes | Dataset: fs_static | Temperature: 0.5 (T=0.5000) | Method: max_logit
-AUPRC: 53.40231% | FPR@TPR95: 77.52201%
+Model: full | Dataset: RoadObsticle21 | Temperature: none (T=1.0000) | Method: max_logit
+AUPRC: 10.65963% | FPR@TPR95: 7.38725%
 ----------------------------------------------------------------------
-Model: cityscapes | Dataset: fs_static | Temperature: 0.5 (T=0.5000) | Method: max_entropy
-AUPRC: 52.46078% | FPR@TPR95: 77.03319%
+Model: full | Dataset: RoadObsticle21 | Temperature: none (T=1.0000) | Method: max_entropy
+AUPRC: 11.04566% | FPR@TPR95: 6.76885%
 ----------------------------------------------------------------------
-Model: cityscapes | Dataset: fs_static | Temperature: 0.5 (T=0.5000) | Method: RbA
-AUPRC: 1.26655% | FPR@TPR95: 99.99997%
+Model: full | Dataset: RoadObsticle21 | Temperature: none (T=1.0000) | Method: RbA
+AUPRC: 10.32624% | FPR@TPR95: 5.44229%
 ----------------------------------------------------------------------
-Model: cityscapes | Dataset: fs_static | Temperature: 0.75 (T=0.7500) | Method: MSP
-AUPRC: 52.43295% | FPR@TPR95: 89.74690%
-----------------------------------------------------------------------
-Model: cityscapes | Dataset: fs_static | Temperature: 0.75 (T=0.7500) | Method: max_logit
-AUPRC: 53.40232% | FPR@TPR95: 77.52196%
-----------------------------------------------------------------------
-Model: cityscapes | Dataset: fs_static | Temperature: 0.75 (T=0.7500) | Method: max_entropy
-AUPRC: 53.11461% | FPR@TPR95: 76.93221%
-----------------------------------------------------------------------
-Model: cityscapes | Dataset: fs_static | Temperature: 0.75 (T=0.7500) | Method: RbA
-AUPRC: 1.24694% | FPR@TPR95: 99.99997%
-----------------------------------------------------------------------
-Model: cityscapes | Dataset: fs_static | Temperature: 1.1 (T=1.1000) | Method: MSP
-AUPRC: 53.13443% | FPR@TPR95: 76.88808%
-----------------------------------------------------------------------
-Model: cityscapes | Dataset: fs_static | Temperature: 1.1 (T=1.1000) | Method: max_logit
-AUPRC: 53.40233% | FPR@TPR95: 77.52201%
-----------------------------------------------------------------------
-Model: cityscapes | Dataset: fs_static | Temperature: 1.1 (T=1.1000) | Method: max_entropy
-AUPRC: 53.65971% | FPR@TPR95: 76.86184%
-----------------------------------------------------------------------
-Model: cityscapes | Dataset: fs_static | Temperature: 1.1 (T=1.1000) | Method: RbA
-AUPRC: 1.23583% | FPR@TPR95: 99.99997%
-----------------------------------------------------------------------
-Model: cityscapes | Dataset: fs_static | Temperature: 2.0 (T=2.0000) | Method: MSP
-AUPRC: 53.81469% | FPR@TPR95: 76.80696%
-----------------------------------------------------------------------
-Model: cityscapes | Dataset: fs_static | Temperature: 2.0 (T=2.0000) | Method: max_logit
-AUPRC: 53.40237% | FPR@TPR95: 77.52201%
-----------------------------------------------------------------------
-Model: cityscapes | Dataset: fs_static | Temperature: 2.0 (T=2.0000) | Method: max_entropy
-AUPRC: 54.15023% | FPR@TPR95: 76.79954%
-----------------------------------------------------------------------
-Model: cityscapes | Dataset: fs_static | Temperature: 2.0 (T=2.0000) | Method: RbA
-AUPRC: 1.22170% | FPR@TPR95: 99.99997%
-----------------------------------------------------------------------
-Model: cityscapes | Dataset: RoadAnomaly21 | Temperature: 0.5 (T=0.5000) | Method: MSP
-AUPRC: 69.65869% | FPR@TPR95: 17.80525%
-----------------------------------------------------------------------
-Model: cityscapes | Dataset: RoadAnomaly21 | Temperature: 0.5 (T=0.5000) | Method: max_logit
-AUPRC: 72.84902% | FPR@TPR95: 20.91633%
-----------------------------------------------------------------------
-Model: cityscapes | Dataset: RoadAnomaly21 | Temperature: 0.5 (T=0.5000) | Method: max_entropy
-AUPRC: 70.72915% | FPR@TPR95: 17.78400%
-----------------------------------------------------------------------
-Model: cityscapes | Dataset: RoadAnomaly21 | Temperature: 0.5 (T=0.5000) | Method: RbA
-AUPRC: 9.05979% | FPR@TPR95: 99.79126%
-----------------------------------------------------------------------
-Model: cityscapes | Dataset: RoadAnomaly21 | Temperature: 0.75 (T=0.7500) | Method: MSP
-AUPRC: 69.38649% | FPR@TPR95: 17.71683%
-----------------------------------------------------------------------
-Model: cityscapes | Dataset: RoadAnomaly21 | Temperature: 0.75 (T=0.7500) | Method: max_logit
-AUPRC: 72.84888% | FPR@TPR95: 20.91633%
-----------------------------------------------------------------------
-Model: cityscapes | Dataset: RoadAnomaly21 | Temperature: 0.75 (T=0.7500) | Method: max_entropy
-AUPRC: 70.95815% | FPR@TPR95: 17.69133%
-----------------------------------------------------------------------
-Model: cityscapes | Dataset: RoadAnomaly21 | Temperature: 0.75 (T=0.7500) | Method: RbA
-AUPRC: 8.97473% | FPR@TPR95: 99.79126%
-----------------------------------------------------------------------
-Model: cityscapes | Dataset: RoadAnomaly21 | Temperature: 1.1 (T=1.1000) | Method: MSP
-AUPRC: 69.70774% | FPR@TPR95: 17.61558%
-----------------------------------------------------------------------
-Model: cityscapes | Dataset: RoadAnomaly21 | Temperature: 1.1 (T=1.1000) | Method: max_logit
-AUPRC: 72.84865% | FPR@TPR95: 20.91633%
-----------------------------------------------------------------------
-Model: cityscapes | Dataset: RoadAnomaly21 | Temperature: 1.1 (T=1.1000) | Method: max_entropy
-AUPRC: 73.29500% | FPR@TPR95: 17.56657%
-----------------------------------------------------------------------
-Model: cityscapes | Dataset: RoadAnomaly21 | Temperature: 1.1 (T=1.1000) | Method: RbA
-AUPRC: 8.83144% | FPR@TPR95: 99.79126%
-----------------------------------------------------------------------
-Model: cityscapes | Dataset: RoadAnomaly21 | Temperature: 2.0 (T=2.0000) | Method: MSP
-AUPRC: 75.48512% | FPR@TPR95: 9.68736%
-----------------------------------------------------------------------
-Model: cityscapes | Dataset: RoadAnomaly21 | Temperature: 2.0 (T=2.0000) | Method: max_logit
-AUPRC: 72.84809% | FPR@TPR95: 20.91633%
-----------------------------------------------------------------------
-Model: cityscapes | Dataset: RoadAnomaly21 | Temperature: 2.0 (T=2.0000) | Method: max_entropy
-AUPRC: 79.63904% | FPR@TPR95: 9.37639%
-----------------------------------------------------------------------
-Model: cityscapes | Dataset: RoadAnomaly21 | Temperature: 2.0 (T=2.0000) | Method: RbA
-AUPRC: 9.00449% | FPR@TPR95: 99.79126%
-----------------------------------------------------------------------
-Model: cityscapes | Dataset: RoadAnomaly | Temperature: 0.5 (T=0.5000) | Method: MSP
-AUPRC: 71.97532% | FPR@TPR95: 33.45079%
-----------------------------------------------------------------------
-Model: cityscapes | Dataset: RoadAnomaly | Temperature: 0.5 (T=0.5000) | Method: max_logit
-AUPRC: 70.90235% | FPR@TPR95: 45.01210%
-----------------------------------------------------------------------
-Model: cityscapes | Dataset: RoadAnomaly | Temperature: 0.5 (T=0.5000) | Method: max_entropy
-AUPRC: 74.35848% | FPR@TPR95: 32.60069%
-----------------------------------------------------------------------
-Model: cityscapes | Dataset: RoadAnomaly | Temperature: 0.5 (T=0.5000) | Method: RbA
-AUPRC: 6.32718% | FPR@TPR95: 99.79734%
-----------------------------------------------------------------------
-Model: cityscapes | Dataset: RoadAnomaly | Temperature: 0.75 (T=0.7500) | Method: MSP
-AUPRC: 72.82895% | FPR@TPR95: 32.73811%
-----------------------------------------------------------------------
-Model: cityscapes | Dataset: RoadAnomaly | Temperature: 0.75 (T=0.7500) | Method: max_logit
-AUPRC: 70.90249% | FPR@TPR95: 45.01210%
-----------------------------------------------------------------------
-Model: cityscapes | Dataset: RoadAnomaly | Temperature: 0.75 (T=0.7500) | Method: max_entropy
-AUPRC: 74.85229% | FPR@TPR95: 33.11664%
-----------------------------------------------------------------------
-Model: cityscapes | Dataset: RoadAnomaly | Temperature: 0.75 (T=0.7500) | Method: RbA
-AUPRC: 6.02084% | FPR@TPR95: 99.79734%
-----------------------------------------------------------------------
-Model: cityscapes | Dataset: RoadAnomaly | Temperature: 1.1 (T=1.1000) | Method: MSP
-AUPRC: 73.23084% | FPR@TPR95: 32.51582%
-----------------------------------------------------------------------
-Model: cityscapes | Dataset: RoadAnomaly | Temperature: 1.1 (T=1.1000) | Method: max_logit
-AUPRC: 70.90267% | FPR@TPR95: 45.01210%
-----------------------------------------------------------------------
-Model: cityscapes | Dataset: RoadAnomaly | Temperature: 1.1 (T=1.1000) | Method: max_entropy
-AUPRC: 75.30773% | FPR@TPR95: 31.97412%
-----------------------------------------------------------------------
-Model: cityscapes | Dataset: RoadAnomaly | Temperature: 1.1 (T=1.1000) | Method: RbA
-AUPRC: 5.58232% | FPR@TPR95: 99.79734%
-----------------------------------------------------------------------
-Model: cityscapes | Dataset: RoadAnomaly | Temperature: 2.0 (T=2.0000) | Method: MSP
-AUPRC: 73.73916% | FPR@TPR95: 30.00604%
-----------------------------------------------------------------------
-Model: cityscapes | Dataset: RoadAnomaly | Temperature: 2.0 (T=2.0000) | Method: max_logit
-AUPRC: 70.90320% | FPR@TPR95: 45.01210%
-----------------------------------------------------------------------
-Model: cityscapes | Dataset: RoadAnomaly | Temperature: 2.0 (T=2.0000) | Method: max_entropy
-AUPRC: 75.90076% | FPR@TPR95: 29.58999%
-----------------------------------------------------------------------
-Model: cityscapes | Dataset: RoadAnomaly | Temperature: 2.0 (T=2.0000) | Method: RbA
-AUPRC: 5.24903% | FPR@TPR95: 99.79734%
-----------------------------------------------------------------------
-Model: cityscapes | Dataset: FS_LostFound_full | Temperature: 0.5 (T=0.5000) | Method: MSP
-AUPRC: 28.50406% | FPR@TPR95: 37.10604%
-----------------------------------------------------------------------
-Model: cityscapes | Dataset: FS_LostFound_full | Temperature: 0.5 (T=0.5000) | Method: max_logit
-AUPRC: 26.43750% | FPR@TPR95: 16.43725%
-----------------------------------------------------------------------
-Model: cityscapes | Dataset: FS_LostFound_full | Temperature: 0.5 (T=0.5000) | Method: max_entropy
-AUPRC: 30.50078% | FPR@TPR95: 13.76278%
-----------------------------------------------------------------------
-Model: cityscapes | Dataset: FS_LostFound_full | Temperature: 0.5 (T=0.5000) | Method: RbA
-AUPRC: 0.15177% | FPR@TPR95: 99.96202%
-----------------------------------------------------------------------
-Model: cityscapes | Dataset: FS_LostFound_full | Temperature: 0.75 (T=0.7500) | Method: MSP
-AUPRC: 28.74640% | FPR@TPR95: 14.36828%
-----------------------------------------------------------------------
-Model: cityscapes | Dataset: FS_LostFound_full | Temperature: 0.75 (T=0.7500) | Method: max_logit
-AUPRC: 26.43752% | FPR@TPR95: 16.43725%
-----------------------------------------------------------------------
-Model: cityscapes | Dataset: FS_LostFound_full | Temperature: 0.75 (T=0.7500) | Method: max_entropy
-AUPRC: 30.98023% | FPR@TPR95: 14.78754%
-----------------------------------------------------------------------
-Model: cityscapes | Dataset: FS_LostFound_full | Temperature: 0.75 (T=0.7500) | Method: RbA
-AUPRC: 0.15124% | FPR@TPR95: 99.96202%
-----------------------------------------------------------------------
-Model: cityscapes | Dataset: FS_LostFound_full | Temperature: 1.1 (T=1.1000) | Method: MSP
-AUPRC: 28.88270% | FPR@TPR95: 15.54194%
-----------------------------------------------------------------------
-Model: cityscapes | Dataset: FS_LostFound_full | Temperature: 1.1 (T=1.1000) | Method: max_logit
-AUPRC: 26.43756% | FPR@TPR95: 16.43725%
-----------------------------------------------------------------------
-Model: cityscapes | Dataset: FS_LostFound_full | Temperature: 1.1 (T=1.1000) | Method: max_entropy
-AUPRC: 31.24085% | FPR@TPR95: 15.66200%
-----------------------------------------------------------------------
-Model: cityscapes | Dataset: FS_LostFound_full | Temperature: 1.1 (T=1.1000) | Method: RbA
-AUPRC: 0.15047% | FPR@TPR95: 99.96202%
-----------------------------------------------------------------------
-Model: cityscapes | Dataset: FS_LostFound_full | Temperature: 2.0 (T=2.0000) | Method: MSP
-AUPRC: 28.99935% | FPR@TPR95: 16.34740%
-----------------------------------------------------------------------
-Model: cityscapes | Dataset: FS_LostFound_full | Temperature: 2.0 (T=2.0000) | Method: max_logit
-AUPRC: 26.43765% | FPR@TPR95: 16.43725%
-----------------------------------------------------------------------
-Model: cityscapes | Dataset: FS_LostFound_full | Temperature: 2.0 (T=2.0000) | Method: max_entropy
-AUPRC: 31.28338% | FPR@TPR95: 16.89256%
-----------------------------------------------------------------------
-Model: cityscapes | Dataset: FS_LostFound_full | Temperature: 2.0 (T=2.0000) | Method: RbA
-AUPRC: 0.14934% | FPR@TPR95: 99.96202%
-----------------------------------------------------------------------
-Model: cityscapes | Dataset: RoadObsticle21 | Temperature: 0.5 (T=0.5000) | Method: MSP
-AUPRC: 50.94851% | FPR@TPR95: 94.40657%
-----------------------------------------------------------------------
-Model: cityscapes | Dataset: RoadObsticle21 | Temperature: 0.5 (T=0.5000) | Method: max_logit
-AUPRC: 48.73370% | FPR@TPR95: 99.99958%
-----------------------------------------------------------------------
-Model: cityscapes | Dataset: RoadObsticle21 | Temperature: 0.5 (T=0.5000) | Method: max_entropy
-AUPRC: 50.94754% | FPR@TPR95: 99.99974%
-----------------------------------------------------------------------
-Model: cityscapes | Dataset: RoadObsticle21 | Temperature: 0.5 (T=0.5000) | Method: RbA
-AUPRC: 3.20123% | FPR@TPR95: 100.00000%
-----------------------------------------------------------------------
-Model: cityscapes | Dataset: RoadObsticle21 | Temperature: 0.75 (T=0.7500) | Method: MSP
-AUPRC: 51.29664% | FPR@TPR95: 99.99953%
-----------------------------------------------------------------------
-Model: cityscapes | Dataset: RoadObsticle21 | Temperature: 0.75 (T=0.7500) | Method: max_logit
-AUPRC: 48.73370% | FPR@TPR95: 99.99958%
-----------------------------------------------------------------------
-Model: cityscapes | Dataset: RoadObsticle21 | Temperature: 0.75 (T=0.7500) | Method: max_entropy
-AUPRC: 51.40147% | FPR@TPR95: 99.99967%
-----------------------------------------------------------------------
-Model: cityscapes | Dataset: RoadObsticle21 | Temperature: 0.75 (T=0.7500) | Method: RbA
-AUPRC: 3.04138% | FPR@TPR95: 100.00000%
-----------------------------------------------------------------------
-Model: cityscapes | Dataset: RoadObsticle21 | Temperature: 1.1 (T=1.1000) | Method: MSP
-AUPRC: 51.89999% | FPR@TPR95: 99.99964%
-----------------------------------------------------------------------
-Model: cityscapes | Dataset: RoadObsticle21 | Temperature: 1.1 (T=1.1000) | Method: max_logit
-AUPRC: 48.73371% | FPR@TPR95: 99.99958%
-----------------------------------------------------------------------
-Model: cityscapes | Dataset: RoadObsticle21 | Temperature: 1.1 (T=1.1000) | Method: max_entropy
-AUPRC: 52.08611% | FPR@TPR95: 99.99967%
-----------------------------------------------------------------------
-Model: cityscapes | Dataset: RoadObsticle21 | Temperature: 1.1 (T=1.1000) | Method: RbA
-AUPRC: 2.77705% | FPR@TPR95: 100.00000%
-----------------------------------------------------------------------
-Model: cityscapes | Dataset: RoadObsticle21 | Temperature: 2.0 (T=2.0000) | Method: MSP
-AUPRC: 52.38355% | FPR@TPR95: 99.99972%
-----------------------------------------------------------------------
-Model: cityscapes | Dataset: RoadObsticle21 | Temperature: 2.0 (T=2.0000) | Method: max_logit
-AUPRC: 48.73372% | FPR@TPR95: 99.99958%
-----------------------------------------------------------------------
-Model: cityscapes | Dataset: RoadObsticle21 | Temperature: 2.0 (T=2.0000) | Method: max_entropy
-AUPRC: 48.80078% | FPR@TPR95: 99.99967%
-----------------------------------------------------------------------
-Model: cityscapes | Dataset: RoadObsticle21 | Temperature: 2.0 (T=2.0000) | Method: RbA
-AUPRC: 2.75463% | FPR@TPR95: 100.00000%
-----------------------------------------------------------------------
-
