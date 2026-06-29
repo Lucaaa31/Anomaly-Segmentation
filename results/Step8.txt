@@ -244,3 +244,84 @@ AUPRC: 11.04566% | FPR@TPR95: 6.76885%
 Model: full | Dataset: RoadObsticle21 | Temperature: none (T=1.0000) | Method: RbA
 AUPRC: 10.32624% | FPR@TPR95: 5.44229%
 ----------------------------------------------------------------------
+
+
+
+CELL 2 — Cityscapes Model × All Datasets × Temperature Grid
+======================================================================
+
+Model: cityscapes | Dataset: fs_static | Temperature: scaled (T=1.0000) | Method: MSP
+AUPRC: 54.3228% | FPR@TPR95: 35.2026%
+----------------------------------------------------------------------
+Model: cityscapes | Dataset: RoadAnomaly21 | Temperature: scaled (T=1.0000) | Method: MSP
+AUPRC: 74.3035% | FPR@TPR95: 33.4336%
+----------------------------------------------------------------------
+Model: cityscapes | Dataset: RoadAnomaly | Temperature: scaled (T=1.0000) | Method: MSP
+AUPRC: 75.6753% | FPR@TPR95: 19.3338%
+----------------------------------------------------------------------
+Model: cityscapes | Dataset: FS_LostFound_full | Temperature: scaled (T=1.0000) | Method: MSP
+AUPRC: 25.4174% | FPR@TPR95: 14.8885%
+----------------------------------------------------------------------
+Model: cityscapes | Dataset: RoadObsticle21 | Temperature: scaled (T=1.0000) | Method: MSP
+AUPRC: 7.9029% | FPR@TPR95: 16.5908%
+----------------------------------------------------------------------
+Model: cityscapes | Dataset: fs_static | Temperature: scaled (T=0.5000) | Method: MSP
+AUPRC: 54.1827% | FPR@TPR95: 35.1208%
+----------------------------------------------------------------------
+Model: cityscapes | Dataset: RoadAnomaly21 | Temperature: scaled (T=0.5000) | Method: MSP
+AUPRC: 74.1093% | FPR@TPR95: 33.0541%
+----------------------------------------------------------------------
+Model: cityscapes | Dataset: RoadAnomaly | Temperature: scaled (T=0.5000) | Method: MSP
+AUPRC: 75.4416% | FPR@TPR95: 19.2073%
+----------------------------------------------------------------------
+Model: cityscapes | Dataset: FS_LostFound_full | Temperature: scaled (T=0.5000) | Method: MSP
+AUPRC: 25.3318% | FPR@TPR95: 14.9762%
+----------------------------------------------------------------------
+Model: cityscapes | Dataset: RoadObsticle21 | Temperature: scaled (T=0.5000) | Method: MSP
+AUPRC: 7.7104% | FPR@TPR95: 16.9385%
+----------------------------------------------------------------------
+Model: cityscapes | Dataset: fs_static | Temperature: scaled (T=0.7500) | Method: MSP
+AUPRC: 53.4109% | FPR@TPR95: 36.4127%
+----------------------------------------------------------------------
+Model: cityscapes | Dataset: RoadAnomaly21 | Temperature: scaled (T=0.7500) | Method: MSP
+AUPRC: 75.0287% | FPR@TPR95: 31.8843%
+----------------------------------------------------------------------
+Model: cityscapes | Dataset: RoadAnomaly | Temperature: scaled (T=0.7500) | Method: MSP
+AUPRC: 76.1224% | FPR@TPR95: 18.4396%
+----------------------------------------------------------------------
+Model: cityscapes | Dataset: FS_LostFound_full | Temperature: scaled (T=0.7500) | Method: MSP
+AUPRC: 24.7138% | FPR@TPR95: 15.5217%
+----------------------------------------------------------------------
+Model: cityscapes | Dataset: RoadObsticle21 | Temperature: scaled (T=0.7500) | Method: MSP
+AUPRC: 7.4926% | FPR@TPR95: 17.6104%
+----------------------------------------------------------------------
+Model: cityscapes | Dataset: fs_static | Temperature: scaled (T=1.1000) | Method: MSP
+AUPRC: 54.7691% | FPR@TPR95: 34.5538%
+----------------------------------------------------------------------
+Model: cityscapes | Dataset: RoadAnomaly21 | Temperature: scaled (T=1.1000) | Method: MSP
+AUPRC: 73.7642% | FPR@TPR95: 34.1185%
+----------------------------------------------------------------------
+Model: cityscapes | Dataset: RoadAnomaly | Temperature: scaled (T=1.1000) | Method: MSP
+AUPRC: 75.2917% | FPR@TPR95: 19.8806%
+----------------------------------------------------------------------
+Model: cityscapes | Dataset: FS_LostFound_full | Temperature: scaled (T=1.1000) | Method: MSP
+AUPRC: 25.1873% | FPR@TPR95: 15.0729%
+----------------------------------------------------------------------
+Model: cityscapes | Dataset: RoadObsticle21 | Temperature: scaled (T=1.1000) | Method: MSP
+AUPRC: 8.2148% | FPR@TPR95: 16.0792%
+----------------------------------------------------------------------
+Model: cityscapes | Dataset: fs_static | Temperature: scaled (T=2.0000) | Method: MSP
+AUPRC: 56.4308% | FPR@TPR95: 32.0715%
+----------------------------------------------------------------------
+Model: cityscapes | Dataset: RoadAnomaly21 | Temperature: scaled (T=2.0000) | Method: MSP
+AUPRC: 77.8226% | FPR@TPR95: 28.6149%
+----------------------------------------------------------------------
+Model: cityscapes | Dataset: RoadAnomaly | Temperature: scaled (T=2.0000) | Method: MSP
+AUPRC: 77.6437% | FPR@TPR95: 16.8203%
+----------------------------------------------------------------------
+Model: cityscapes | Dataset: FS_LostFound_full | Temperature: scaled (T=2.0000) | Method: MSP
+AUPRC: 27.3104% | FPR@TPR95: 13.1827%
+----------------------------------------------------------------------
+Model: cityscapes | Dataset: RoadObsticle21 | Temperature: scaled (T=2.0000) | Method: MSP
+AUPRC: 8.9417% | FPR@TPR95: 14.7682%
+----------------------------------------------------------------------
